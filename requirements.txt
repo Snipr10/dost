@@ -1,0 +1,9 @@
+asgiref==3.3.1
+Django==3.1.5
+dostoevsky==0.6.0
+fasttext==0.9.2
+numpy==1.19.5
+pybind11==2.6.1
+pytz==2020.5
+razdel==0.5.0
+sqlparse==0.4.1
