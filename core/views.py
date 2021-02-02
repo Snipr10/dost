@@ -36,6 +36,8 @@ def get_rate(result):
 
 
 def remove_html_tags(text):
+    if text is None:
+        return ""
     clean = re.compile('<.*?>')
     text = re.sub(clean, '', text)
     clean = re.compile(u'('
