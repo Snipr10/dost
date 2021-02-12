@@ -14,9 +14,9 @@ from dostoevsky.models import FastTextSocialNetworkModel
 tokenizer = RegexTokenizer()
 model = FastTextSocialNetworkModel(tokenizer=tokenizer)
 
-min_negative = 0.11
-min_positive = 0.06
-min_neutral = 0.81
+min_negative = 0.5
+min_positive = 0.5
+min_neutral = 0.8
 
 
 def get_rate(result):
@@ -28,10 +28,14 @@ def get_rate(result):
         return "neutral"
     # if negative > min_negative or negative/neutral > min_negative or positive > min_positive or positive/neutral > min_positive:
     if negative > min_negative or positive > min_positive:
-        if negative > positive * 1.5:
-            return "negative"
+        if negative > positive:
+            return "neutral"
         else:
             return "positive"
+    if negative > positive and negative > neutral:
+        return "negative"
+    if positive > negative and positive > neutral:
+        return "positive"
     return "neutral"
 
 
