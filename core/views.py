@@ -16,7 +16,7 @@ model = FastTextSocialNetworkModel(tokenizer=tokenizer)
 
 min_negative = 0.4
 min_positive = 0.4
-min_neutral = 0.7
+min_neutral = 0.8
 
 
 def get_rate(result):
