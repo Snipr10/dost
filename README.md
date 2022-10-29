@@ -1,15 +1,9 @@
-## ENV (if needed)
-    python3 -m venv venv
-    source ./venv/bin/activate
-    
-## Requirements
-pip3 install -r requirements.txt
+﻿# Docker
+docker build -t dost .
 
-## Dosotoevsky data (https://pypi.org/project/dostoevsky/)
-python3 -m dostoevsky download fasttext-social-network-model
+docker run -d --name dost-container -p 8000:8000 dost
 
-## Run 
-python3 manage.py runserver
+
 
 ## Example
 POST http://127.0.0.1:8000/api/text/
